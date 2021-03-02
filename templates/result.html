@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<style>
+	body {
+    	background-image: url('https://www.hdwallpapers.in/download/scenic_landscape_4k-3840x2160.jpg');
+  		background-repeat: no-repeat;
+		background-attachment: fixed;
+  		background-size: cover;
+		}
+	body {
+	  	margin: 0;
+	  	position: absolute;
+	  	top: 30%;
+	  	left: 50%;
+	  	-ms-transform: translate(-50%, -50%);
+	  	transform: translate(-50%, -50%);
+		}
+	h2 {
+	  	margin: 0;
+	  	position: absolute;
+	  	top: 130%;
+	  	left: 50%;
+	  	-ms-transform: translate(-50%, -50%);
+	  	transform: translate(-50%, -50%);
+		}
+	body, h1, h2, textarea, input, p {
+		font-family: Monaco, sans-serif ;
+		}
+	</style>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<p>ML App</p>
+		</div>
+		<h1>Spam Detector For SMS Messages</h1>
+	</div>
+	</header>
+	<p style="color:black;font-size:20;text-align: center;"><b>Results</b></p>
+	<div class="results">
+
+	{% if prediction == 1%}
+	<h2 style="color:red;"; >!!! Spam !!!</h2>
+
+	{% elif prediction == 0%}
+	<h2 style="color:green;">Not a Spam</h2>
+	{% endif %}
+
+	</div>
+
+</body>
+</html>
